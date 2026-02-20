@@ -15,7 +15,8 @@ showTextInScreen('h1', 'Jogo do Número Secreto');
 showTextInScreen('p', 'Escolha um número entre 1 e 10');
 
 function verifyGuess() {
-    console.log (secretNumber);
+    let guess = document.querySelector ('input').value;
+    console.log (guess == secretNumber);
 
 }
 
