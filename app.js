@@ -20,6 +20,7 @@ function verifyGuess() {
         'tentativa' ;
         let messageTries = `Você descobriu o número secreto com ${tries} ${triesWord}`;
         showTextInScreen('p', messageTries);
+        document.getElementById('reiniciar').removeAttribute('disabled');
    
     }  else {
         if (guess> secretNumber) {
