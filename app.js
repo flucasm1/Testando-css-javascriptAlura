@@ -29,6 +29,7 @@ function verifyGuess() {
             showTextInScreen('h1', 'Tente novamente');
             showTextInScreen('p', 'O número é maior');
             tries ++
+            cleanField();
         }
     }
 }
@@ -36,4 +37,8 @@ function verifyGuess() {
 function generateNumber() {
     return parseInt(Math.random() *10 + 1) ;
     
+}
+function cleanField() {
+    guess = document.querySelector('input')
+    guess.value = '';
 }
