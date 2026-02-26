@@ -7,11 +7,15 @@ function showTextInScreen (tag, text) {
     field.innerHTML = text;
     
 }
+function showInitialMessage() {
 showTextInScreen('h1', 'Jogo do Número Secreto');
 showTextInScreen('p', 'Escolha um número entre 1 e 10');
+}
+showInitialMessage();
 
 function verifyGuess() {
     let guess = document.querySelector ('input').value;
+    
     
    
     if (guess == secretNumber) {
@@ -42,4 +46,12 @@ function generateNumber() {
 function cleanField() {
     guess = document.querySelector('input')
     guess.value = '';
+}
+function restartGame() {
+    secretNumber = generateNumber();
+    cleanField();
+    console.log (secretNumber); 
+    tries= 1;
+    showInitialMessage();
+    document.getElementById('reiniciar').setAttribute('disabled', true);
 }
