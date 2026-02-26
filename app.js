@@ -1,5 +1,6 @@
 let secretNumber = generateNumber ();
 console.log(secretNumber);
+let tries = 1
 
 function showTextInScreen (tag, text) {
     let field = document.querySelector(tag);
@@ -15,7 +16,10 @@ function verifyGuess() {
    
     if (guess == secretNumber) {
         showTextInScreen('h1', 'Acertou!');
-        showTextInScreen('p', 'Você descobriu o número secreto');
+        let triesWord = tries > 1 ? 'tentativas' : 
+        'tentativa' ;
+        let messageTries = `Você descobriu o número secreto com ${tries} ${triesWord}`;
+        showTextInScreen('p', messageTries);
    
     }  else {
         if (guess> secretNumber) {
@@ -24,6 +28,7 @@ function verifyGuess() {
         }  else {
             showTextInScreen('h1', 'Tente novamente');
             showTextInScreen('p', 'O número é maior');
+            tries ++
         }
     }
 }
