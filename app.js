@@ -1,3 +1,4 @@
+let numberList = [];
 let secretNumber = generateNumber ();
 console.log(secretNumber);
 let tries = 1
@@ -40,11 +41,19 @@ function verifyGuess() {
 }
 
 function generateNumber() {
-    return parseInt(Math.random() *10 + 1) ;
+    let chosenNumber = parseInt(Math.random() *10 + 1) ;
+    if(numberList.includes(chosenNumber)) {
+        return generateNumber();
+    }  else { 
+        numberList.push(chosenNumber);
+        console.log(numberList);
+        return chosenNumber;
+        }
+    }
     
-}
+
 function cleanField() {
-    guess = document.querySelector('input')
+    guess = document.querySelector('input');
     guess.value = '';
 }
 function restartGame() {
