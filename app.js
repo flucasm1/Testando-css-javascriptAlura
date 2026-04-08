@@ -42,6 +42,11 @@ function verifyGuess() {
 
 function generateNumber() {
     let chosenNumber = parseInt(Math.random() *10 + 1) ;
+    let elementsnumber = numberList.length
+    if (elementsnumber == 10) {
+        numberList = []
+    }
+
     if(numberList.includes(chosenNumber)) {
         return generateNumber();
     }  else { 
