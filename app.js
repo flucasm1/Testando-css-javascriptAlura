@@ -1,7 +1,9 @@
 let numberList = [];
+let maxNumberlist = 10;
 let secretNumber = generateNumber ();
 console.log(secretNumber);
 let tries = 1
+
 
 function showTextInScreen (tag, text) {
     let field = document.querySelector(tag);
@@ -41,10 +43,10 @@ function verifyGuess() {
 }
 
 function generateNumber() {
-    let chosenNumber = parseInt(Math.random() *10 + 1) ;
+    let chosenNumber = parseInt(Math.random() *maxNumberlist + 1) ;
     let elementsnumber = numberList.length
-    if (elementsnumber == 10) {
-        numberList = []
+    if (elementsnumber == maxNumberlist) {
+        numberList = [];
     }
 
     if(numberList.includes(chosenNumber)) {
